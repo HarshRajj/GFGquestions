@@ -2,19 +2,21 @@
 class Solution:
     def subarraySum(self, arr, target):
         # code here
-        summ = 0
+        summ = 0 
         start = 0 
-        
-        for end in range(len(arr)) :
-            summ += arr[end] 
+        for end in range(len(arr)):
+            summ+= arr[end] 
             
             while summ > target :
-                summ -= arr[start] 
-                start += 1 
-            if summ == target :
+                summ -= arr[start]
+                start+=1 
+                
+            if summ == target:
                 return [start+1, end+1] 
+                
         return [-1]
-            
+        
+
 
 
 #{ 
