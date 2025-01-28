@@ -1,33 +1,10 @@
 #User function Template for python3
 
-class Solution: 
+from itertools import permutations
 
-    def findPermutation(self, s): 
-        
-        def backtrack(ind):
-            if ind == len(nums):
-                res.append(''.join(nums))
-                return
-            
-            used = set()
-            for i in range(ind, len(nums)):
-                if nums[i] in used: 
-                    continue
-                used.add(nums[i])
-                nums[ind], nums[i] = nums[i], nums[ind]
-                backtrack(ind + 1)
-                nums[ind], nums[i] = nums[i], nums[ind]
-                
-        nums = sorted(list(s)) 
-        res = [] 
-        backtrack(0) 
-        return res 
-        
-        
-        
-        
-
-        
+class Solution:
+    def findPermutation(self, s):
+        return list(set("".join(i) for i in permutations(s)))
 
 
 
